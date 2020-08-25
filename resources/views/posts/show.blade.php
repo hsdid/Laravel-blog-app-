@@ -7,6 +7,7 @@
     
     <div class="card-header">
     <h1>{{$post->title}}</h1>
+    <img style="width:100%" src="/storage/cover_image/{{$post->cover_image}}" alt="">
     </div>
     <div class="card-body">
         {{$post->body}}

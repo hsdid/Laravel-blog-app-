@@ -2,7 +2,7 @@
 
 @section('content')
     <h1 class="mb-4">Create Post</h1>
-    {!! Form::open(['action' => 'PostsController@store', 'method' => 'POST']) !!}
+    {!! Form::open(['action' => 'PostsController@store', 'method' => 'POST', 'enctype' => 'multipart/form-data']) !!}
         <div class="form-group">
             {{Form::label('title','Title')}}
             {{-- values , name , value --}}
@@ -11,7 +11,10 @@
         <div class="form-group">
             {{Form::label('body','Body')}}
             {{-- values , name , value --}}
-            {{Form::text('body', '', ['class' => 'form-control','placeholder' => 'Body text'])}}
+            {{Form::textarea('body', '', ['class' => 'form-control','placeholder' => 'Body text'])}}
+        </div>
+        <div class="form-group">
+            {{Form::file('cover_image')}}
         </div>
         {{Form::submit('Submit', ['class'=>'btn btn-primary'])}}
     {!! Form::close() !!}
